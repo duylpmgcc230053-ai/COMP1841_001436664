@@ -1,0 +1,608 @@
+/* ========== NAVBAR STYLE ========== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 12px 60px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.logo a {
+  font-size: 22px;
+  font-weight: 700;
+  color: #4f54dd;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #000;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #4f54dd;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-greeting {
+    font-weight: 600;
+    color: #111;
+    margin-right: 8px;
+}
+
+.nav-actions .login {
+  background: #4f54dd;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.nav-actions .login:hover {
+  background: #4875e7;
+}
+
+.nav-actions .signup {
+  background: #4f54dd;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.nav-actions .signup:hover {
+  background: #4875e7;
+}
+
+/* Responsive nhỏ */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .nav-actions {
+    margin-top: 10px;
+  }
+}
+
+/* ========================================================== */
+/* ========== BASE AUTHENTICATION STYLES (SHARED) ========== */
+/* ========================================================== */
+
+body {
+    /* Light neutral background to match the login mockup */
+    background-color: #ffffff;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    /* place content from the top so the login card sits higher */
+    align-items: flex-start;
+    min-height: calc(100vh - 160px);
+    padding: 30px 20px 30px;
+}
+
+/* Nhóm Form (Áp dụng cho cả hai form) */
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+    position: relative; 
+}
+
+/* Label */
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Cảnh báo lỗi Input */
+.form-group input.input-error {
+    border: none;
+    border-bottom: 2px solid red;
+    padding-bottom: 5px;
+    background-color: transparent;
+}
+.error-text {
+    display: block;
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Nút Submit (Base style) */
+.submit-btn {
+    padding: 12px;
+    background: #4f54dd;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.submit-btn:hover {
+    background: #5d62e0; 
+}
+
+
+/* ========================================================== */
+/* ========== SIGN UP SPECIFIC STYLES (Complex Form) ========== */
+/* ========================================================== */
+
+.signup-form-box {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px; 
+    text-align: center;
+}
+
+.signup-form-box h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.recommendation {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Nút Google */
+.social-btn {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.or-divider {
+    color: #999;
+    margin: 15px 0;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* Ký tự giới hạn & Gợi ý mật khẩu */
+.char-limit {
+    position: absolute;
+    top: 35px;
+    right: 10px;
+    font-size: 12px;
+    color: #aaa;
+}
+.password-hint {
+    display: block;
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* Nút Submit (Chiếm toàn bộ chiều rộng) */
+.signup-form-box .submit-btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.terms-text {
+    font-size: 12px;
+    color: #999;
+    margin: 20px 0;
+}
+
+.already-have-account {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.already-have-account p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* ================== LOGIN PAGE SPECIFIC STYLES ================== */
+
+/* Page title like in the screenshot */
+.welcome-title {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    text-align: center;
+    /* less vertical gap so the login card sits higher */
+    margin: 12px 0 8px;
+    color: #111;
+}   
+
+/* Card that contains the login form */
+.login-form-box {
+    background: #ffffff;
+    padding: 28px 34px;
+    border-radius: 8px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+    width: 100%;
+    max-width: 460px;
+    text-align: center;
+}
+
+.login-form-box .subtitle {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+/* Social buttons with pill shape and dark border */
+.social-pill {
+    width: 100%;
+    padding: 10px 18px;
+    height: 48px;
+    border-radius: 28px;
+    border: 2px solid #111;
+    background: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    cursor: pointer;
+}
+.social-pill:hover {
+    background: #fafafa;
+}
+.social-pill .icon {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+}
+
+.social-google .icon {
+    
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    /* Official-ish Google colors */
+    background: conic-gradient(from -45deg,
+        #DB4437 0deg 90deg,
+        #F4B400 90deg 180deg,
+        #0F9D58 180deg 270deg,
+        #4285F4 270deg 360deg);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* Microsoft and Facebook sign-in buttons removed from UI; kept Google only */
+
+.login-form-box .subtitle { margin-top: 6px; margin-bottom: 18px; }
+
+/* make the small "or" divider centered */
+.or-divider { text-align:center; }
+
+.or-divider {
+    color: #999;
+    margin: 18px 0;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* Override generic inputs for login card to become pill inputs */
+.login-form-box input[type="text"],
+.login-form-box input[type="email"],
+.login-form-box input[type="password"] {
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: none;
+    background-color: #f2f2f2;
+    font-size: 15px;
+    margin-bottom: 14px;
+    box-sizing: border-box;
+}
+
+/* Keep form-group relative so we can place the eye icon */
+.login-form-box .form-group { position: relative; text-align: left; }
+
+.eye-toggle {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+
+/* Large dark login button */
+.login-btn {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 28px;
+    background: #4f54dd; /* changed to blue */
+    color: #ffffff;
+    border: none;
+    font-weight: 700;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.login-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+    font-size: 14px;
+    color: #444;
+}
+.login-footer a { color: #444; text-decoration: none; }
+
+/* Slightly more vertical space on large screens */
+@media (min-width: 1100px) {
+    .auth-container { padding-top: 60px; padding-bottom: 60px; }
+}
+
+/* Small screens tweak: keep card narrower spacing */
+@media (max-width: 420px) {
+    .welcome-title { font-size: 32px; margin-top: 18px; }
+    .login-form-box { padding: 22px; }
+}
+
+/* ================== HOMEPAGE HERO STYLES ================== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px 40px;
+}
+.hero-left {
+    flex: 1 1 50%;
+    max-width: 52%;
+}
+.hero-right {
+    flex: 1 1 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero h1 {
+    font-size: 64px;
+    line-height: 1.02;
+    margin: 0 0 18px;
+    color: #111;
+    font-weight: 700;
+}
+.hero p.lead {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 28px;
+}
+.cta-btn {
+    display: inline-block;
+    background: #9cc3ff;
+    color: #073763;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(124,164,255,0.18);
+}
+.hero-cta { display:flex; gap:12px; align-items:center; margin-top:18px; }
+.cta-btn.primary { background: #4f54dd; color: #fff; box-shadow: 0 6px 18px rgba(79,84,221,0.18); }
+.cta-btn.outline { background: transparent; color: #4f54dd; border: 2px solid #4f54dd; box-shadow: none; padding: 10px 18px; }
+
+@media (max-width: 900px) {
+    .hero-cta { justify-content:center; }
+    .cta-btn.primary, .cta-btn.outline { width: 48%; }
+}
+.hero-right img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 900px) {
+    .hero { flex-direction: column-reverse; padding: 30px 18px; }
+    .hero-left { max-width: 100%; text-align: center; }
+    .hero h1 { font-size: 38px; }
+    .hero p.lead { text-align: center; }
+}
+
+/* features section removed */
+
+/* ================== QUESTIONS / FEED LAYOUT ================== */
+.questions-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 24px;
+    padding: 28px 40px;
+}
+.create-box .card {
+    padding: 18px;
+}
+.create-box h3 { margin-top:0; }
+.create-box .form-row { margin-bottom:12px; }
+.create-box label { display:block; font-size:13px; margin-bottom:6px; color:#333; }
+.create-box input, .create-box textarea, .create-box select { width:100%; padding:10px; border-radius:8px; border:1px solid #e6e6e6; background:#fafafa; }
+.create-box input[type="file"] { padding:6px 8px; background:transparent; }
+.btn { display:inline-block; padding:10px 14px; border-radius:8px; text-decoration:none; cursor:pointer; }
+.btn-green { background:#28a745; color:#fff; border:none; }
+
+.feed .compose-bar { display:flex; gap:12px; align-items:center; padding:12px; }
+.compose-bar .avatar { width:44px; height:44px; border-radius:50%; background:#4f54dd; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; }
+.compose-bar .compose-input { flex:1; height:44px; background:#f2f3f4; border-radius:10px; }
+
+.feed-list .card { padding:18px; margin-bottom:16px; }
+.empty-card { text-align:center; color:#666; padding:40px; }
+.empty-icon { font-size:40px; margin-bottom:8px; }
+
+.post.card h3 { margin:0 0 8px; }
+.post .meta { color:#777; font-size:13px; margin-bottom:10px; }
+.post .actions { margin-top:12px; }
+.post .actions a, .post .actions button { margin-right:8px; }
+
+@media (max-width: 900px) {
+  .questions-grid { grid-template-columns: 1fr; padding: 16px; }
+  .create-box { order:2; }
+  .feed { order:1; }
+}
+
+
+
+/* ========================================================== */
+/* ========== login SPECIFIC STYLES (Complex Form) ========== */
+/* ========================================================== */
+
+.signup-form-box {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px  rgba(6, 3, 107, 0.1);
+    width: 100%;
+    max-width: 450px; /* Chiều rộng lớn hơn Log In */
+    text-align: center;
+}
+
+.signup-form-box h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.recommendation {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Nút Google (Social) */
+.social-btn {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.or-divider {
+    color: #999;
+    margin: 15px 0;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* Ký tự giới hạn & Gợi ý mật khẩu */
+.char-limit {
+    position: absolute;
+    top: 35px;
+    right: 10px;
+    font-size: 12px;
+    color: #aaa;
+}
+.password-hint {
+    display: block;
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* Nút Submit (Chiếm toàn bộ chiều rộng) */
+.signup-form-box .submit-btn {
+    width: 100%;
+    margin-top: 20px;
+    background: #4f54dd; /* match login button color */
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 28px;
+    font-weight: 700;
+}
+
+.terms-text {
+    font-size: 12px;
+    color: #999;
+    margin: 20px 0;
+}
+
+.already-have-account {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.already-have-account p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
